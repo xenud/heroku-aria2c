@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ -n $RCLONE_CONFIG && -n $RCLONE_DESTINATION ]]; then
+if [[ -n $RCLONE_CONFIG && -n $RCLONE_1ST_DESTINATION ]]; then
     echo "Rclone config detected"
     echo -e "$RCLONE_CONFIG" > rclone.conf
     echo "on-download-stop=./delete.sh" >> aria2c.conf
