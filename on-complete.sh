@@ -20,6 +20,7 @@ fi
 echo -e "$(date +"%m/%d %H:%M:%S") ${INFO} Delete .aria2 file finish"
 echo "$(($(cat numUpload)+1))" > numUpload # Plus 1
 
+echo "RCLONEEEEEEEEEEEEE"
 if [[ $2 -eq 1 ]]; then # single file
 	rclone -v --config="rclone.conf" copy "$3" "$RCLONE_1ST_REMOTE:$RCLONE_1ST_DESTINATION/${relativePath%%/*}" 2>&1	
 	rclone -v --config="rclone.conf" copy "$3" "$RCLONE_2ND_REMOTE:$RCLONE_2ND_DESTINATION/${relativePath%%/*}" 2>&1	
