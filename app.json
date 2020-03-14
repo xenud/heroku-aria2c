@@ -15,7 +15,19 @@
 			"description": "Rclone config to mount in one line, replace line breaks with \"\\n\"",
 			"required": false
 		},
-		"RCLONE_DESTINATION": {
+		"RCLONE_1ST_REMOTE": {
+			"description": "First remote name",
+			"required": false
+		},
+		"RCLONE_1ST_DESTINATION": {
+			"description": "Path to store your file in your Rclone drive. Must start with a forward slash.",
+			"required": false
+		},
+		"RCLONE_2ND_REMOTE": {
+			"description": "Second remote name",
+			"required": false
+		},
+		"RCLONE_2ND_DESTINATION": {
 			"description": "Path to store your file in your Rclone drive. Must start with a forward slash.",
 			"required": false
 		}
