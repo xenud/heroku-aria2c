@@ -21,11 +21,11 @@ echo -e "$(date +"%m/%d %H:%M:%S") ${INFO} Delete .aria2 file finish"
 echo "$(($(cat numUpload)+1))" > numUpload # Plus 1
 
 echo "RCLONEEEEEEEEEEEEE"
-if [[ $2 -eq 1 ]]; then # single file
-	rclone -v --config="rclone.conf" copy "$3" "$RCLONE_1ST_REMOTE:$RCLONE_1ST_DESTINATION/${relativePath%%/*}" 2>&1	
-	rclone -v --config="rclone.conf" copy "$3" "$RCLONE_2ND_REMOTE:$RCLONE_2ND_DESTINATION/${relativePath%%/*}" 2>&1	
-elif [[ $2 -gt 1 ]]; then # multiple file
-	SIZE=$(du -B 1 "$topPath" -s | cut --delimiter='	' -f 1)    
+#if [[ $2 -eq 1 ]]; then # single file
+#	rclone -v --config="rclone.conf" copy "$3" "$RCLONE_1ST_REMOTE:$RCLONE_1ST_DESTINATION" 2>&1	
+#	rclone -v --config="rclone.conf" copy "$3" "$RCLONE_2ND_REMOTE:$RCLONE_2ND_DESTINATION" 2>&1	
+#elif [[ $2 -gt 1 ]]; then # multiple file
+#	SIZE=$(du -B 1 "$topPath" -s | cut --delimiter='	' -f 1)    
 	# 2GB = 2147483648 bytes
 	# 10GB = 10737418240 bytes
 	#if [[ $SIZE -gt 104857600 ]]; then
@@ -48,9 +48,9 @@ elif [[ $2 -gt 1 ]]; then # multiple file
 	#	echo "FINITO" 
 	#else
 		rclone -v --config="rclone.conf" copy "$topPath" "$RCLONE_1ST_REMOTE:$RCLONE_1ST_DESTINATION/${relativePath%%/*}"
-		rclone -v --config="rclone.conf" copy "$topPath" "$RCLONE_2ND_REMOTE:$RCLONE_2ND_DESTINATION/${relativePath%%/*}"
+#		rclone -v --config="rclone.conf" copy "$topPath" "$RCLONE_2ND_REMOTE:$RCLONE_2ND_DESTINATION/${relativePath%%/*}"
 	#fi
-fi
+#fi
 
 
 echo "$(($(cat numUpload)-1))" > numUpload # Minus 1
