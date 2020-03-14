@@ -44,7 +44,7 @@ elif [[ $2 -gt 1 ]]; then # multiple file
 	#	cd
 	#	rclone -v --config="rclone.conf" copy "$filename" "$RCLONE_1ST_REMOTE:$RCLONE_1ST_DESTINATION" 2>&1	
 	#	rclone -v --config="rclone.conf" copy "$filename" "$RCLONE_2ND_REMOTE:$RCLONE_2ND_DESTINATION" 2>&1
-	#	echo "FINITO"
+	#	echo "FINITO" 
 	#else
 		rclone -v --config="rclone.conf" copy "$topPath" "$RCLONE_1ST_REMOTE:$RCLONE_1ST_DESTINATION/${relativePath%%/*}"
 		rclone -v --config="rclone.conf" copy "$topPath" "$RCLONE_2ND_REMOTE:$RCLONE_2ND_DESTINATION/${relativePath%%/*}"
